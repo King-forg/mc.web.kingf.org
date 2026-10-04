@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Minecraft server | mc.kingf.org</title>
+<meta name="description" content="How to join the mc.kingf.org Minecraft server on Java and Bedrock.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⛏️</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --soil: #2a2118;
+    --grass: #6fa84a;
+    --stone: #cfcabd;
+    --paper: #f3f0e8;
+    --redstone: #b3382c;
+  }
+  * { box-sizing: border-box; }
+  html { height: 100%; }
+  body {
+    margin: 0;
+    min-height: 100%;
+    background: var(--soil);
+    color: var(--paper);
+    font-family: "Source Sans 3", system-ui, sans-serif;
+    font-size: 1.125rem;
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    padding: 4rem 1.25rem;
+  }
+  main { width: 100%; max-width: 38rem; }
+  h1 { font-size: 1.25rem; font-weight: 600; margin: 0 0 2rem; color: var(--stone); }
+  .address {
+    font-family: "Silkscreen", "Courier New", monospace;
+    font-size: clamp(2rem, 9vw, 3.75rem);
+    line-height: 1.1;
+    color: var(--grass);
+    margin: 0 0 1.25rem;
+    word-break: break-word;
+  }
+  button {
+    font: inherit;
+    font-weight: 600;
+    background: var(--grass);
+    color: var(--soil);
+    border: 0;
+    padding: 0.6rem 1.1rem;
+    cursor: pointer;
+  }
+  button:hover { background: #82bd5c; }
+  button:focus-visible { outline: 3px solid var(--paper); outline-offset: 3px; }
+  section { margin-top: 3rem; border-left: 4px solid var(--grass); padding-left: 1.25rem; }
+  section.bedrock { border-left-color: var(--redstone); }
+  h2 { font-size: 1.25rem; margin: 0 0 0.5rem; }
+  p { margin: 0 0 0.75rem; max-width: 34rem; }
+  code { background: rgba(255,255,255,0.1); padding: 0.1rem 0.4rem; }
+  footer { margin-top: 3.5rem; color: var(--stone); font-size: 1rem; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Minecraft server</h1>
+  <p class="address" id="address">mc.kingf.org</p>
+  <button id="copy" type="button">Copy address</button>
+
+  <section>
+    <h2>Java Edition</h2>
+    <p>Open Multiplayer, choose Add Server, and paste the address above. No port is needed.</p>
+  </section>
+
+  <!-- Change the port below if your Geyser port is not the default 19132 -->
+  <section class="bedrock">
+    <h2>Bedrock Edition</h2>
+    <p>Go to Servers, then Add Server. Enter <code>mc.kingf.org</code> as the address and <code>19132</code> as the port.</p>
+  </section>
+
+  <section>
+    <h2>Voice chat</h2>
+    <p>Install the Simple Voice Chat mod on Fabric to talk to nearby players in game.</p>
+  </section>
+
+  <footer>This page is at mc.web.kingf.org. The game server is at mc.kingf.org.</footer>
+</main>
+<script>
+  var btn = document.getElementById("copy");
+  btn.addEventListener("click", function () {
+    var text = document.getElementById("address").textContent;
+    navigator.clipboard.writeText(text).then(function () {
+      btn.textContent = "Copied";
+      setTimeout(function () { btn.textContent = "Copy address"; }, 1500);
+    });
+  });
+</script>
+</body>
+</html>
