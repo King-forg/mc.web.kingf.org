@@ -1,24 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Minecraft server | mc.kingf.org</title>
-<meta name="description" content="How to join the mc.kingf.org Minecraft server on Java and Bedrock.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⛏️</text></svg>">
-<link rel="preconnect" href="https://fonts.googleapis.com">
+<meta name="description" content="How to join the mc.kingf.org Minecraft server on Java and Bedrock."><link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⛏️</text></svg>"><link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
-<style>
+<link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet"><style>
   :root {
     --soil: #2a2118;
     --grass: #6fa84a;
     --stone: #cfcabd;
     --paper: #f3f0e8;
     --redstone: #b3382c;
+    --discord: #5865f2;
+    --discord-hover: #4752c4;
   }
-  * { box-sizing: border-box; }
-  html { height: 100%; }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    height: 100%;
+  }
+
   body {
     margin: 0;
     min-height: 100%;
@@ -31,16 +36,29 @@
     justify-content: center;
     padding: 4rem 1.25rem;
   }
-  main { width: 100%; max-width: 38rem; }
-  h1 { font-size: 1.25rem; font-weight: 600; margin: 0 0 2rem; color: var(--stone); }
+
+  main {
+    width: 100%;
+    max-width: 38rem;
+  }
+
+  h1 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0 0 2rem;
+    color: var(--stone);
+  }
+
   .address {
     font-family: "Silkscreen", "Courier New", monospace;
-    font-size: clamp(2rem, 9vw, 3.75rem);
+    font-size: clamp(1.6rem, 9vw, 3.75rem);
     line-height: 1.1;
     color: var(--grass);
     margin: 0 0 1.25rem;
-    word-break: break-word;
+    white-space: nowrap;
+    word-break: normal;
   }
+
   button {
     font: inherit;
     font-weight: 600;
@@ -50,49 +68,167 @@
     padding: 0.6rem 1.1rem;
     cursor: pointer;
   }
-  button:hover { background: #82bd5c; }
-  button:focus-visible { outline: 3px solid var(--paper); outline-offset: 3px; }
-  section { margin-top: 3rem; border-left: 4px solid var(--grass); padding-left: 1.25rem; }
-  section.bedrock { border-left-color: var(--redstone); }
-  h2 { font-size: 1.25rem; margin: 0 0 0.5rem; }
-  p { margin: 0 0 0.75rem; max-width: 34rem; }
-  code { background: rgba(255,255,255,0.1); padding: 0.1rem 0.4rem; }
-  footer { margin-top: 3.5rem; color: var(--stone); font-size: 1rem; }
-</style>
-</head>
-<body>
-<main>
-  <h1>Minecraft server</h1>
-  <p class="address" id="address">mc.kingf.org</p>
-  <button id="copy" type="button">Copy address</button>
 
-  <section>
+  button:hover {
+    background: #82bd5c;
+  }
+
+  button:focus-visible {
+    outline: 3px solid var(--paper);
+    outline-offset: 3px;
+  }
+
+  section {
+    margin-top: 3rem;
+    border-left: 4px solid var(--grass);
+    padding-left: 1.25rem;
+  }
+
+  section.bedrock {
+    border-left-color: var(--redstone);
+  }
+
+  h2 {
+    font-size: 1.25rem;
+    margin: 0 0 0.5rem;
+  }
+
+  p {
+    margin: 0 0 0.75rem;
+    max-width: 34rem;
+  }
+
+  code {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.1rem 0.4rem;
+  }
+
+  /* Discord */
+
+  .discord-section {
+    border-left-color: var(--discord);
+  }
+
+  .discord-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+    padding: 1rem 1.1rem;
+    background: var(--discord);
+    color: white;
+    text-decoration: none;
+    transition: background 0.15s ease, transform 0.15s ease;
+  }
+
+  .discord-card:hover {
+    background: var(--discord-hover);
+    transform: translateY(-2px);
+  }
+
+  .discord-card:focus-visible {
+    outline: 3px solid var(--paper);
+    outline-offset: 3px;
+  }
+
+  .discord-icon {
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+  }
+
+  .discord-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.25;
+  }
+
+  .discord-title {
+    font-size: 1.15rem;
+    font-weight: 600;
+  }
+
+  .discord-link {
+    font-size: 0.95rem;
+    opacity: 0.85;
+  }
+
+  footer {
+    margin-top: 3.5rem;
+    color: var(--stone);
+    font-size: 1rem;
+  }
+</style></head><body><main>  <h1>Minecraft server</h1>  <p class="address" id="address">mc.kingf.org</p>  <button id="copy" type="button">
+    Copy address
+  </button>  <section>
     <h2>Java Edition</h2>
-    <p>Open Multiplayer, choose Add Server, and paste the address above. No port is needed.</p>
-  </section>
-
-  <!-- Change the port below if your Geyser port is not the default 19132 -->
-  <section class="bedrock">
+    <p>
+      Open Multiplayer, choose Add Server, and paste the address above.
+      No port is needed.
+    </p>
+  </section>  <section class="bedrock">
     <h2>Bedrock Edition</h2>
-    <p>Go to Servers, then Add Server. Enter <code>mc.kingf.org</code> as the address and <code>19132</code> as the port.</p>
-  </section>
-
-  <section>
+    <p>
+      Go to Servers, then Add Server. Enter
+      <code>mc.kingf.org</code> as the address and
+      <code>19132</code> as the port.
+    </p>
+  </section>  <section>
     <h2>Voice chat</h2>
-    <p>Install the Simple Voice Chat mod on Fabric to talk to nearby players in game.</p>
-  </section>
+    <p>
+      Install the Simple Voice Chat mod on Fabric to talk to nearby players
+      in game.
+    </p>
+  </section>  <section class="discord-section">
+    <h2>Discord</h2><p>
+  Join the Discord server to chat with other players and get updates.
+</p>
 
-  <footer>This page is at mc.web.kingf.org. The game server is at mc.kingf.org.</footer>
-</main>
-<script>
+<a
+  class="discord-card"
+  href="https://discord.gg/kYRaN2JQyz"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Join our Discord server"
+>
+
+  <svg
+    class="discord-icon"
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    aria-hidden="true"
+  >
+    <path d="M19.54 0c1.12 0 2.03.91 2.03 2.03v19.94c0 1.12-.91 2.03-2.03 2.03H4.46c-1.12 0-2.03-.91-2.03-2.03V2.03C2.43.91 3.34 0 4.46 0h15.08zM8.35 16.38c.73.54 1.61.82 2.55.82.94 0 1.82-.28 2.55-.82.2-.15.4-.31.58-.49.05-.05.01-.13-.06-.13h-.01c-.31 0-.61-.09-.87-.25-.04-.03-.09-.02-.12.01-.08.08-.17.15-.26.22-.49.37-1.08.56-1.81.56-.73 0-1.32-.19-1.81-.56-.09-.07-.18-.14-.26-.22-.03-.03-.08-.04-.12-.01-.26.16-.56.25-.87.25h-.01c-.07 0-.11.08-.06.13.18.18.38.34.58.49zm-2.01-4.13c0 .84.49 1.52 1.1 1.52.61 0 1.11-.68 1.11-1.52 0-.84-.5-1.52-1.11-1.52-.61 0-1.1.68-1.1 1.52zm8.22 0c0 .84.49 1.52 1.1 1.52.61 0 1.11-.68 1.11-1.52 0-.84-.5-1.52-1.11-1.52-.61 0-1.1.68-1.1 1.52z"/>
+  </svg>
+
+  <span class="discord-text">
+    <span class="discord-title">
+      Join our Discord
+    </span>
+
+    <span class="discord-link">
+      discord.gg/kYRaN2JQyz
+    </span>
+  </span>
+
+</a>
+
+  </section>  <footer>
+    This page is at mc.web.kingf.org.
+    The game server is at mc.kingf.org.
+  </footer></main><script>
   var btn = document.getElementById("copy");
+
   btn.addEventListener("click", function () {
     var text = document.getElementById("address").textContent;
+
     navigator.clipboard.writeText(text).then(function () {
       btn.textContent = "Copied";
-      setTimeout(function () { btn.textContent = "Copy address"; }, 1500);
+
+      setTimeout(function () {
+        btn.textContent = "Copy address";
+      }, 1500);
     });
   });
-</script>
-</body>
+</script></body>
 </html>
